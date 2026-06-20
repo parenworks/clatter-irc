@@ -84,7 +84,9 @@
    #:prefix-user
    #:prefix-host
    #:parse-prefix
-   #:format-message)
+   #:format-message
+   #:get-tag
+   #:get-server-time)
   
   ;; IRCv3 support
   (:export
@@ -132,12 +134,29 @@
    #:dcc-chat
    #:dcc-send
    #:dcc-receive
+   #:dcc-initiate-chat
+   #:dcc-initiate-send
+   #:dcc-handle-offer
+   #:dcc-chat-send
    #:dcc-accept
    #:dcc-reject
    #:dcc-close
    #:dcc-list
    #:dcc-connection
    #:dcc-state
+   ;; Connection / transfer accessors used by clients
+   #:dcc-connection-id
+   #:dcc-connection-nick
+   #:dcc-connection-state
+   #:dcc-connection-direction
+   #:dcc-connection-error-message
+   #:dcc-chat-on-message
+   #:dcc-send-filename
+   #:dcc-send-filesize
+   #:dcc-send-bytes-transferred
+   #:dcc-send-on-progress
+   ;; Hooks
+   #:on-dcc
    #:on-dcc-chat
    #:on-dcc-send
    #:*dcc-download-directory*
